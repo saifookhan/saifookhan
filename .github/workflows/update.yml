@@ -16,9 +16,14 @@ jobs:
       - name: Update README.md
         run: node index.js > README.md
       - name: Commit change & Push
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add .
-          git commit --allow-empty --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
-          git push
+        run: git config user.name 'github-actions[bot]'
+      - name: git - add username
+        run: git config user.name 'github-actions[bot]'
+      - name: git - add email
+        run: git config user.email '51898782+github-actions[bot]@users.noreply.github.com'
+      - name: git - add files
+        run: git add .
+      - name: git - commit files
+        run: git commit -am "chore(readme) update profile readme"
+      - name: git - push files
+        run: git push
